@@ -1,0 +1,9 @@
+= Introduction =
+FitJS is an AJAX library for Fitbit's RESTful API. It is intended to wrap all of its API calls and make it simpler to use by developers. 
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
