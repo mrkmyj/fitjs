@@ -60,7 +60,14 @@ function readyStategChange(xmlhttp)
     if (xmlhttp.readyState===4 && xmlhttp.status===200)
     {
         foauth.authorize(true, "en_US", false, 800, 500);
+       // first parameter means whether you want the redirection to be done in the main window or a popup. If you choose to use Popup, you may want to ensure the browser has not blocked pop-up first
+      // second parameter is the locale of the window. For a list of locales Fitbit support, you can check out https://wiki.fitbit.com/display/API/API+Localization
+      // third parameter means whether the page is for a mobile device
+      // fourth and fifth parameters are the width and height of the pop-up respectively if you choose to redirect the user via a pop-up
         foauth.checkOAuthVerifier(2000, 10000, onTimeOut, onFinished, onFailed);
+       // First parameter means how frequently (in milliseconds) should the webpage talk to the server to figure out whether users has authorized the access. Please implement the code in "oauthverifier.php" located in the "FitJS" folder to look up your database and return with format specified in the php file
+       // Second parameter means timeout in milliseconds (if the server does not respond within this threshold, the connection will be shut down. 
+       // the last three parameters are the functions that handles different events
     }
 }
 }}}
