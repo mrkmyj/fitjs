@@ -40,8 +40,11 @@ Please note that "readyStategChange" is a callback function that will take XMLHt
 {
     if (xmlhttp.readyState===4 && xmlhttp.status===200)
     {
-        foauth.authorize(true, "en_US", false, 800, 500);
-        foauth.checkOAuthVerifier(2000, 10000, onTimeOut, onFinished, onFailed);
+        //receive temporary token from Fitbit API successfully
+    }
+    else
+    {
+        // error handling
     }
 }
 }}}
