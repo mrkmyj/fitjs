@@ -30,13 +30,13 @@ foauth=new FitJS_OAuth("http://example.com/oauthverifier.php",  //callback URL f
 {{{
     var baseString=foauth.oauthBaseString("request_token"); // create base string of the signature
     var signature=foauth.oauthSignatureString(baseString); // generate signature string with HMAC-SHA1
-    foauth.requestToken(signature, true, readyStategChange);   // request token  
+    foauth.requestToken(signature, true, readyStateChange);   // request token  
 }}}
 
 Please note that "readyStategChange" is a callback function that will take XMLHttpRequest as an argument. To check whether you receive a valid response you may want to do:
 
 {{{
-   function readyStategChange(xmlhttp)
+   function readyStateChange(xmlhttp)
 {
     if (xmlhttp.readyState===4 && xmlhttp.status===200)
     {
@@ -45,6 +45,22 @@ Please note that "readyStategChange" is a callback function that will take XMLHt
     else
     {
         // error handling
+    }
+}
+}}}
+
+*4. Redirect users to Fitbit.com for Authorization"
+
+After you received a valid token from Fitbit.com you should then redirect your users to Fitbit.com for their authorizations on your access to their data. In the example below, the redirection is sent out only when token is received. Therefore, the code is placed in "readyStateChange" function (in the last step)
+
+
+{{{
+function readyStategChange(xmlhttp)
+{
+    if (xmlhttp.readyState===4 && xmlhttp.status===200)
+    {
+        foauth.authorize(true, "en_US", false, 800, 500);
+        foauth.checkOAuthVerifier(2000, 10000, onTimeOut, onFinished, onFailed);
     }
 }
 }}}
