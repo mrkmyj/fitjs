@@ -70,7 +70,35 @@
 *_Example_*
 
 
-
-
-
 =Member Variables=
+   url={
+        request_token:"http://api.fitbit.com/oauth/request_token",
+        access_token:"http://api.fitbit.com/oauth/access_token",        
+        authorize:"https://www.fitbit.com/oauth/authenticate",
+        verifier:"fitjs/oauthverifier.php",
+        signature:'fitjs/oauthsignature.php',
+        proxy:"fitjs/proxy.php"        
+    };
+    callbackUrl
+
+    consumerKey
+
+    hashMethod
+
+    verifier
+
+    token
+
+    tokenSecret
+
+    callbackConfirmed
+
+    checkVerifier
+
+    request_token_timestamp
+
+    request_token_nonce
+
+    access_token_timestamp
+
+    access_token_nonce
