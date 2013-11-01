@@ -4,14 +4,14 @@
 {{{
 FitJS_OAuth(callbackUrl, consumerKey, hashMethod)
 }}}
-*_Parameters_*
+*_Parameters:_*
 || callbackUrl || an URL for Fitbit API to callback once the user authorize the access to his/her data. The URL should match what's on record unless no record left on Fitbit.com.  This URL should write the token and verifier returned by Fitbit to database ||
 ||consumerKey||the consumer key string provided by Fitbit||
 ||hashMethod||FitJS currently ONLY ACCEPT HMAC-SHA1. However, HMAC-SHA1, RSA-SHA1, PLAINTEXT will be supported in the future||
-*_Return_*
+*_Return:_*
 A initialized copy of Fitbit instance
 
-*_Example_*
+*_Example:_*
 {{{
     foauth=new FitJS_OAuth("http://example.com/oauthcomplete.php",  //callback url
                                 "7c799999999999e8a149499999", //consumer key
@@ -23,67 +23,67 @@ A initialized copy of Fitbit instance
 
 ===requestToken (signature, async, onreadyStateChange)===
 
-*_Parameters_*
+*_Parameters:_*
 
-*_Return_*
+*_Return:_*
 
-*_Example_*
+*_Example:_*
 
 ==Signing a request==
 ===oauthBaseString (stage)===
 
-*_Parameters_*
+*_Parameters:_*
 
-*_Return_*
+*_Return:_*
 
-*_Example_*
+*_Example:_*
 
 
 ===oauthSignatureString (baseString)===
 
-*_Parameters_*
+*_Parameters:_*
 
-*_Return_*
+*_Return:_*
 
-*_Example_*
+*_Example:_*
 
 
 ==Authorizing Access==
 ===authorize(usePopUp, locale, mobile, popupWidth, popupHeight)===
 
-*_Parameters_*
+*_Parameters:_*
 
-*_Return_*
+*_Return:_*
 
-*_Example_*
+*_Example:_*
 
 
 ===checkOAuthVerifier(interval, timeout, onTimedOut, onFinished, onFailed)===
 
-*_Parameters_*
+*_Parameters:_*
 
-*_Return_*
+*_Return:_*
 
-*_Example_*
+*_Example:_*
 
 
 ===stopCheckingOAuthVerifier()===
 
-*_Parameters_*
+*_Parameters:_*
 
-*_Return_*
+*_Return:_*
 
-*_Example_*
+*_Example:_*
 
 
 ==Accessing a token===
 ===accessToken(signature, async, onreadyStateChange)===
 
-*_Parameters_*
+*_Parameters:_*
 
-*_Return_*
+*_Return:_*
 
-*_Example_*
+*_Example:_*
 
 
 =Member Variables=
