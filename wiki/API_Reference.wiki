@@ -1,16 +1,11 @@
 =Functions=
-===Constructor===
+==Constructor==
 
-*FitJS_OAuth(callbackUrl, consumerKey, hashMethod)*
+===FitJS_OAuth(callbackUrl, consumerKey, hashMethod)===
 
-*_Parameters_*
+==Requesting a temporary token==
 
-*_Return_*
-
-*_Example_*
-
-===Signing a request===
-*oauthBaseString (stage)*
+===requestToken (signature, async, onreadyStateChange)===
 
 *_Parameters_*
 
@@ -18,8 +13,55 @@
 
 *_Example_*
 
+==Signing a request==
+===oauthBaseString (stage)===
 
-*oauthSignatureString (baseString)*
+*_Parameters_*
+
+*_Return_*
+
+*_Example_*
+
+
+===oauthSignatureString (baseString)===
+
+*_Parameters_*
+
+*_Return_*
+
+*_Example_*
+
+
+==Authorizing Access==
+===authorize(usePopUp, locale, mobile, popupWidth, popupHeight)===
+
+*_Parameters_*
+
+*_Return_*
+
+*_Example_*
+
+
+===checkOAuthVerifier(interval, timeout, onTimedOut, onFinished, onFailed)===
+
+*_Parameters_*
+
+*_Return_*
+
+*_Example_*
+
+
+===stopCheckingOAuthVerifier()===
+
+*_Parameters_*
+
+*_Return_*
+
+*_Example_*
+
+
+==Accessing a token===
+===accessToken(signature, async, onreadyStateChange)===
 
 *_Parameters_*
 
@@ -29,16 +71,6 @@
 
 
 
-accessToken(signature, async, onreadyStateChange)
-
-authorize(usePopUp, locale, mobile, popupWidth, popupHeight)
-
-checkOAuthVerifier(interval, timeout, onTimedOut, onFinished, onFailed)
-
-
-requestToken (signature, async, onreadyStateChange)
-
-stopCheckingOAuthVerifier()
 
 
 =Member Variables=
