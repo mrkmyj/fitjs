@@ -8,8 +8,12 @@ FitJS is a AJAX (containing javascript and php) library for Fitbit's RESTful API
   * You need to know basics of Javascript and/or PHP
   * You ought to understand basics of OAuth authentication. If not, you may want to read https://wiki.fitbit.com/display/API/OAuth+Authentication+in+the+Fitbit+API#OAuthAuthenticationintheFitbitAPI-TheOAuthFlow
 
+*1. Using FitJS*
 
-*1. Initializing FitJS*
+  * copy the entire FitJS folder to your javascript folder
+  * include fitjs.js in your html
+
+*2. Initializing FitJS*
 
 {{{
 foauth=new FitJS_OAuth("http://example.com/oauthverifier.php",  //callback URL for OAuth verifier
@@ -18,7 +22,7 @@ foauth=new FitJS_OAuth("http://example.com/oauthverifier.php",  //callback URL f
                                 );
 }}}
 
-*2. Request Token* 
+*3. Request Token* 
 
 {{{
     var baseString=foauth.oauthBaseString("request_token"); // create base string of the signature
