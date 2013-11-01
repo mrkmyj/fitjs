@@ -1,4 +1,4 @@
-=Functions=
+=Member Functions=
 ==Constructor==
 
 {{{
@@ -21,7 +21,9 @@ A initialized copy of Fitbit instance
 
 ==Requesting a temporary token==
 
-===requestToken (signature, async, onreadyStateChange)===
+{{{
+requestToken (signature, async, onreadyStateChange)
+}}}
 
 *_Parameters:_*
 
@@ -39,7 +41,9 @@ A initialized copy of Fitbit instance
 *_Example:_*
 
 
-===oauthSignatureString (baseString)===
+{{{
+oauthSignatureString (baseString)
+}}}
 
 *_Parameters:_*
 
@@ -49,7 +53,9 @@ A initialized copy of Fitbit instance
 
 
 ==Authorizing Access==
-===authorize(usePopUp, locale, mobile, popupWidth, popupHeight)===
+{{{
+authorize(usePopUp, locale, mobile, popupWidth, popupHeight)
+}}}
 
 *_Parameters:_*
 
@@ -58,7 +64,9 @@ A initialized copy of Fitbit instance
 *_Example:_*
 
 
-===checkOAuthVerifier(interval, timeout, onTimedOut, onFinished, onFailed)===
+{{{
+checkOAuthVerifier(interval, timeout, onTimedOut, onFinished, onFailed)
+}}}
 
 *_Parameters:_*
 
@@ -67,7 +75,10 @@ A initialized copy of Fitbit instance
 *_Example:_*
 
 
-===stopCheckingOAuthVerifier()===
+{{{
+stopCheckingOAuthVerifier()
+}}}
+
 
 *_Parameters:_*
 
@@ -77,7 +88,9 @@ A initialized copy of Fitbit instance
 
 
 ==Accessing a token===
-===accessToken(signature, async, onreadyStateChange)===
+{{{
+accessToken(signature, async, onreadyStateChange)
+}}}
 
 *_Parameters:_*
 
@@ -87,6 +100,7 @@ A initialized copy of Fitbit instance
 
 
 =Member Variables=
+   {{{
    url={
         request_token:"http://api.fitbit.com/oauth/request_token",
         access_token:"http://api.fitbit.com/oauth/access_token",        
@@ -94,27 +108,52 @@ A initialized copy of Fitbit instance
         verifier:"fitjs/oauthverifier.php",
         signature:'fitjs/oauthsignature.php',
         proxy:"fitjs/proxy.php"        
-    };
-    callbackUrl
+    }
+}}}
+    {{{
+callbackUrl
+}}}
 
+{{{
     consumerKey
+}}}
 
+{{{
     hashMethod
+}}}
 
+{{{
     verifier
+}}}
 
+{{{
     token
+}}}
 
+{{{
     tokenSecret
+}}}
 
+{{{
     callbackConfirmed
+}}}
 
+{{{
     checkVerifier
+}}}
 
+{{{
     request_token_timestamp
+}}}
 
+{{{
     request_token_nonce
+}}}
 
+{{{
     access_token_timestamp
+}}}
 
+{{{
     access_token_nonce
+}}}
