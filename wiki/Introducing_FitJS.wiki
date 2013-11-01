@@ -11,7 +11,8 @@ FitJS is a AJAX (containing javascript and php) library for Fitbit's RESTful API
 
 *1. Initializing FitJS*
 
-foauth=new FitJS_OAuth("http://example.com/oauthcomplete.php",  //callback URL for OAuth verifier
+foauth=new FitJS_OAuth
+                                ("http://example.com/oauthcomplete.php",  //callback URL for OAuth verifier
                                 "999999999999999999999999", //consumer key provided by Fitbit
                                 "HMAC-SHA1" //hash method. FitJS 1.0 only supports HMAC-SHA1.
                                 );
