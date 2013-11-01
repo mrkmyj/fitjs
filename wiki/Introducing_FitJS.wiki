@@ -91,4 +91,13 @@ function onFinished()
     // second parameter means whether it is an asynchronous call
     // third parameter is a call back function for handling state changes on the XMLHttpRequest
 }
+
+
+function onAccessTokenStateChange(xmlhttp)
+{
+        if (xmlhttp.readyState===4 && xmlhttp.status===200)
+    {
+        alert("token:"+foauth.oauth_token+" token secret:"+foauth.oauth_token_secret+" user id: "+foauth.oauth_token_secret);    
+    }
+}
 }}}
