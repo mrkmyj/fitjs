@@ -5,8 +5,8 @@ FitJS is a AJAX (containing javascript and php) library for Fitbit's RESTful API
 = A Quick Guide to Using FitJS =
 
 ==Prerequisite==
-* You need to know basics of Javascript and/or PHP
-* You ought to understand basics of OAuth authentication. If not, you may want to read https://wiki.fitbit.com/display/API/OAuth+Authentication+in+the+Fitbit+API#OAuthAuthenticationintheFitbitAPI-TheOAuthFlow
+  * You need to know basics of Javascript and/or PHP
+  * You ought to understand basics of OAuth authentication. If not, you may want to read https://wiki.fitbit.com/display/API/OAuth+Authentication+in+the+Fitbit+API#OAuthAuthenticationintheFitbitAPI-TheOAuthFlow
 
 
 *1. Initializing FitJS*
