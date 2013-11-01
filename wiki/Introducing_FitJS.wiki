@@ -12,6 +12,9 @@ FitJS is a AJAX (containing javascript and php) library for Fitbit's RESTful API
 
   * copy the entire FitJS folder to your javascript folder
   * include fitjs.js in your html
+{{{
+<script src="fitjs/fitjs.js"></script>   
+}}}
 
 *2. Initializing FitJS*
 
