@@ -31,6 +31,8 @@ foauth=new FitJS_OAuth("http://example.com/oauthverifier.php",  //callback URL f
     var baseString=foauth.oauthBaseString("request_token"); // create base string of the signature
     var signature=foauth.oauthSignatureString(baseString); // generate signature string with HMAC-SHA1
     foauth.requestToken(signature, true, readyStateChange);   // request token  
+    // second parameter means whether it is an asynchronous call
+    // third parameter is a call back function for handling state changes on the XMLHttpRequest
 }}}
 
 Please note that "readyStategChange" is a callback function that will take XMLHttpRequest as an argument. To check whether you receive a valid response you may want to do:
@@ -69,5 +71,24 @@ function readyStategChange(xmlhttp)
        // Second parameter means timeout in milliseconds (if the server does not respond within this threshold, the connection will be shut down. 
        // the last three parameters are the functions that handles different events
     }
+}
+}}}
+
+In the example above, you can see the constant checking is initiated once the pop-up is generated. The checking will be stopped once it detects "oauthverifier" has already returned verifier after user authorize the access.
+
+onTimeOut, onFinished and onFailed are all callback functions accepting one standard XMLHttpRequest argument. In step 5, you can see how onFinished is implemented
+
+* 5. Accessing Token*
+
+{{{
+function onFinished()
+{
+    var basestring=foauth.oauthBaseString("access_token");
+    // generate the base string for access token request 
+    var signature=foauth.oauthSignatureString(basestring);  
+    // generate signatur string for the access token request 
+    foauth.accessToken(signature, true, onAccessTokenStateChange);
+    // second parameter means whether it is an asynchronous call
+    // third parameter is a call back function for handling state changes on the XMLHttpRequest
 }
 }}}
