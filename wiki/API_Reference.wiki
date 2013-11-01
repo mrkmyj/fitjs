@@ -1,13 +1,15 @@
-#summary One-sentence summary of this page.
+=Functions=
+===Constructor===
+*FitJS_OAuth(callbackUrl, consumerKey, hashMethod)*
+*_Parameters_*
+*_Return_*
+*_Example_*
+accessToken(signature, async, onreadyStateChange)
+authorize(usePopUp, locale, mobile, popupWidth, popupHeight)
+checkOAuthVerifier(interval, timeout, onTimedOut, onFinished, onFailed)
+oauthBaseString (stage)
+oauthSignatureString (baseString)
+requestToken (signature, async, onreadyStateChange)
+stopCheckingOAuthVerifier()
 
-= Introduction =
-
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+=Member Variables=
