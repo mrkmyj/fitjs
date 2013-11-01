@@ -1,15 +1,44 @@
 =Functions=
 ===Constructor===
+
 *FitJS_OAuth(callbackUrl, consumerKey, hashMethod)*
+
 *_Parameters_*
+
 *_Return_*
+
 *_Example_*
+
+===Signing a request===
+*oauthBaseString (stage)*
+
+*_Parameters_*
+
+*_Return_*
+
+*_Example_*
+
+
+*oauthSignatureString (baseString)*
+
+*_Parameters_*
+
+*_Return_*
+
+*_Example_*
+
+
+
 accessToken(signature, async, onreadyStateChange)
+
 authorize(usePopUp, locale, mobile, popupWidth, popupHeight)
+
 checkOAuthVerifier(interval, timeout, onTimedOut, onFinished, onFailed)
-oauthBaseString (stage)
-oauthSignatureString (baseString)
+
+
 requestToken (signature, async, onreadyStateChange)
+
 stopCheckingOAuthVerifier()
+
 
 =Member Variables=
