@@ -32,3 +32,16 @@ foauth=new FitJS_OAuth("http://example.com/oauthverifier.php",  //callback URL f
     var signature=foauth.oauthSignatureString(baseString); // generate signature string with HMAC-SHA1
     foauth.requestToken(signature, true, readyStategChange);   // request token  
 }}}
+
+Please note that "readyStategChange" is a callback function that will take XMLHttpRequest as an argument. To check whether you receive a valid response you may want to do:
+
+{{{
+   function readyStategChange(xmlhttp)
+{
+    if (xmlhttp.readyState===4 && xmlhttp.status===200)
+    {
+        foauth.authorize(true, "en_US", false, 800, 500);
+        foauth.checkOAuthVerifier(2000, 10000, onTimeOut, onFinished, onFailed);
+    }
+}
+}}}
