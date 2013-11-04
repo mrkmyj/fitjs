@@ -266,7 +266,10 @@ callbackUrl
 {{{
 oauth_token_secret
 }}}
----
+
+Horizontal rule
+---- 
+
 {{{
 encoded_user_id
 }}}
