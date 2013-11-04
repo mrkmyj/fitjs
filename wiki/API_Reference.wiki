@@ -267,7 +267,7 @@ callbackUrl
 oauth_token_secret
 }}}
 
-Horizontal rule
+
 ---- 
 
 {{{
