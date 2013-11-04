@@ -267,8 +267,7 @@ callbackUrl
 oauth_token_secret
 }}}
 
-
----- 
+  ---- 
 
 {{{
 encoded_user_id
