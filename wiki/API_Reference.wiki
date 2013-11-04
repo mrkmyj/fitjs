@@ -3,9 +3,9 @@ Before start, you may want to check out http://tools.ietf.org/html/draft-hammer-
 =Member Functions=
 ==Constructor==
 
-{{{
+<strong>
 FitJS_OAuth(callbackUrl, consumerKey, hashMethod)
-}}}
+</Strong>
 *_Parameters:_*
 || callbackUrl || an URL for Fitbit API to callback once the user authorize the access to his/her data. The URL should match what's on record unless no record left on Fitbit.com.  This URL should write the token and verifier returned by Fitbit to database ||
 ||consumerKey||the consumer key string provided by Fitbit||
@@ -267,7 +267,7 @@ callbackUrl
 oauth_token_secret
 }}}
 
-  ---- 
+---- 
 
 {{{
 encoded_user_id
