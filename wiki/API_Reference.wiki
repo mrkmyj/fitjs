@@ -6,6 +6,7 @@ Before start, you may want to check out http://tools.ietf.org/html/draft-hammer-
 <strong>
 FitJS_OAuth(callbackUrl, consumerKey, hashMethod)
 </Strong>
+
 *_Parameters:_*
 || callbackUrl || an URL for Fitbit API to callback once the user authorize the access to his/her data. The URL should match what's on record unless no record left on Fitbit.com.  This URL should write the token and verifier returned by Fitbit to database ||
 ||consumerKey||the consumer key string provided by Fitbit||
@@ -33,7 +34,11 @@ For more information about signing OAuth request, please see:
 
 http://tools.ietf.org/html/draft-hammer-oauth-10#section-3.4
 
-===oauthBaseString (stage)===
+===Generating a base string===
+
+<strong>
+oauthBaseString(stage);
+</strong>
 This function will generate a base string for signing based on the type of request. 
 
 *_Parameters:_*
@@ -48,11 +53,10 @@ var baseString=foauth.oauthBaseString("request_token");
 var basestring=foauth.oauthBaseString("access_token");
 }}}
 
----- 
 
-{{{
+<strong>
 oauthSignatureString (baseString)
-}}}
+</strong>
 This function will sign the base string by using HMAC-SHA1. Currently, HMAC-SHA1 is the only method allowed in the 1.0 version of FitJS. 
 
 *_Parameters:_*
@@ -69,9 +73,9 @@ A signature string by using HMAC-SHA1
 
 ==Requesting a temporary token==
 
-{{{
+<strong>
 requestToken (signature, async, onreadyStateChange)
-}}}
+</strong>
 
 *_Parameters:_*
 ||signature|| the signature string based on this request's base string||
@@ -89,11 +93,9 @@ foauth.requestToken(signature, true, readyStategChange);
 ==Authorizing Access==
 Through the OAuth authorization process, user has to give your app the permission to access his/her data on Fitbit server. Thus, your app needs to either redirect the user to or use a pop-up window to allow the user access to fitbit.com/authorize. 
 
-
-{{{
+<strong>
 authorize(usePopUp, locale, mobile, popupWidth, popupHeight)
-}}}
-
+</strong>
 
 This function allows both pop-up and redirect, although using pop-up is highly recommended to preserve data in your javascript. 
 
@@ -112,11 +114,11 @@ None
 foauth.authorize(true, "en_US", false, 800, 500);
 }}}
 
----- 
 
-{{{
+
+<strong>
 checkOAuthVerifier(interval, timeout, onTimedOut, onFinished, onFailed)
-}}}
+</strong>
 
 This function sends requests to "oauthverifier.php" to check whether your website as acquired OAuth verifier from fitbit.com (this occurs only after user has authorized the access). Thus, the prerequisite is to implement  a callback URL that allows fitbit.com to send verifier and token and "oauthverifier.php", which pulls data from your database where the verifier and token are stored. 
 
@@ -141,11 +143,10 @@ None
 foauth.checkOAuthVerifier(2000, 10000, onTimeOut, onFinished, onFailed);
 }}}
 
----- 
 
-{{{
+<strong>
 stopCheckingOAuthVerifier()
-}}}
+</strong>
 
 checkOAuthVerifier() will automatically stop sending requests if it acquires verifier and token from the "oauthverifier". However, should you want to stop the checking manually under certain circumstances, you can call this function. 
 
@@ -165,9 +166,9 @@ stopCheckingOAuthVerifier();
 
 
 ==Accessing a token===
-{{{
+<strong>
 accessToken(signature, async, onreadyStateChange)
-}}}
+</strong>
 
 The last step in the OAuth process is to request and receives token credentials from Fitbit. The return includes token, token secret and the user's user-id. With these credentials, your app can then access user's data. 
 
