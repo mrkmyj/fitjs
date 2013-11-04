@@ -96,33 +96,52 @@ foauth.authorize(true, "en_US", false, 800, 500);
 }}}
 
 ---- 
+This function sends requests to "oauthverifier.php" to check whether your website as acquired OAuth verifier from fitbit.com (this occurs only after user has authorized the access). Thus, the prerequisite is to implement  a callback URL that allows fitbit.com to send verifier and token and "oauthverifier.php", which pulls data from your database where the verifier and token are stored. 
+
+Note that "oauthverifier.php" MUST RETURN VERIFIER AND TOKEN IN FOLLOWING FORMAT:
+
+"verifier=XXX&token=XXX"
+
 {{{
 checkOAuthVerifier(interval, timeout, onTimedOut, onFinished, onFailed)
 }}}
 
 *_Parameters:_*
-||interval|| ||
-||timeout|| ||
-||onTimedOut|| ||
-||onFinished|| ||
-||onFailed|| ||
+||interval|| frequency to check on "oauthverifier.php" in milliseconds ||
+||timeout|| the threshold to timeout of a single request in milliseconds||
+||onTimedOut|| callback function if it does timeout (return XMLHttpRequest)||
+||onFinished|| callback function when finish (return XMLHttpRequest)||
+||onFailed|| callback function when error occurs (return XMLHttpRequest) ||
 
 *_Return:_*
 
+None
+
 *_Example:_*
+{{{
+foauth.checkOAuthVerifier(2000, 10000, onTimeOut, onFinished, onFailed);
+}}}
 
 ---- 
+checkOAuthVerifier() will automatically stop sending requests if it acquires verifier and token from the "oauthverifier". However, should you want to stop the checking manually under certain circumstances, you can call this function. 
+
 {{{
 stopCheckingOAuthVerifier()
 }}}
 
 
 *_Parameters:_*
-N/A
+
+None
 
 *_Return:_*
+None
 
 *_Example:_*
+{{{
+stopCheckingOAuthVerifier();
+}}}
+
 
 
 ==Accessing a token===
